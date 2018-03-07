@@ -52,10 +52,7 @@ public class Mvshlf : EditorWindow {
     string baseUrl = "https://moveshelf.com";
     string baseApiUrl = "https://moveshelf.com/graphql";
     double time = 0;
-    double timeStart = 0;
-    bool go = false;
-    string action = "";
-    List<object> actionsArgs = new List<object>();
+    double MAX_RESULTS = 10;
 
     ClipPreview previewContainer = new ClipPreview();
 
@@ -205,7 +202,6 @@ public class Mvshlf : EditorWindow {
             string newFolderPath = AssetDatabase.GUIDToAssetPath(guid);
         }
   
-        go = false;
         byte[] data = handler.data;// www.downloadHandler.data;
         string name = "untitled";
 
@@ -276,6 +272,8 @@ public class Mvshlf : EditorWindow {
             parsejson.url = baseUrl + "/edit/" + node["id"].ToString();
             parsejson.previewUrl = baseUrl + "/preview_image/" + node["id"].ToString();
             searchResults.Add(parsejson);
+            if (searchResults.Count > MAX_RESULTS)
+                break;
         }
     }
 
@@ -426,7 +424,7 @@ public class Mvshlf : EditorWindow {
                 EditorGUILayout.EndHorizontal();
             }
             GUILayout.Label("Preview:");
-            EditorGUI.DrawPreviewTexture(new Rect(10, 310 + comments.Count * 18, 600, 350), previewContainer.preview);
+            EditorGUI.DrawPreviewTexture(new Rect(10, 210 + searchResults.Count*21 + comments.Count * 18, 600, 350), previewContainer.preview);
         }
     }
 
