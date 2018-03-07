@@ -268,7 +268,8 @@ public class Mvshlf : EditorWindow {
             parsejson.id = node["id"].ToString();
             parsejson.title = node["title"].ToString();
             parsejson.description = node["description"].ToString();
-            parsejson.downloadUrl = node["originalDataDownloadUri"].ToString();
+            if(node["originalDataDownloadUri"] != null)
+                parsejson.downloadUrl = node["originalDataDownloadUri"].ToString();
             parsejson.url = baseUrl + "/edit/" + node["id"].ToString();
             parsejson.previewUrl = baseUrl + "/preview_image/" + node["id"].ToString();
             searchResults.Add(parsejson);
@@ -369,7 +370,7 @@ public class Mvshlf : EditorWindow {
             EditorGUILayout.PrefixLabel(searchResults[i].title);
             GUILayout.FlexibleSpace();
 
-            if (GUILayout.Button("import", GUILayout.Width(80)))
+            if (searchResults[i].downloadUrl != null && GUILayout.Button("import", GUILayout.Width(80)))
             {
                 string[] args = { searchResults[i].title };
                 downloadDataFromUrl(searchResults[i].downloadUrl, getMotion, args);
