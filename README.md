@@ -1,5 +1,5 @@
 # mvshlf-unity
 Moveshelf API integration for Unity
-* Clone the repository inside Assets/ folder of a unity project
-* Request for API Key on Moveshelf.com
-* Search for great motions without leaving Unity
+* Clone the repository inside the *Assets/* folder of a Unity project
+* Get your API key on https://moveshelf.com
+* Search for great motions and include them in your project without leaving Unity!
