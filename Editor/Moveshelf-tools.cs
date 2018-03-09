@@ -50,7 +50,7 @@ public class Mvshlf : EditorWindow {
     Queue<RequestJob> jobList = new Queue<RequestJob>();
     string MVSHLF_API_KEY = "MVSHLF_API_KEY";
     string baseUrl = "https://moveshelf.com";
-    string baseApiUrl = "https://moveshelf.com/graphql";
+    string baseApiUrl = "https://api.moveshelf.com/graphql";
     double time = 0;
     double MAX_RESULTS = 10;
 
