@@ -322,7 +322,7 @@ public class Mvshlf : EditorWindow {
         www.uploadHandler = (UploadHandlerRaw)new UploadHandlerRaw(data);
         www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
 
-        www.SetRequestHeader("Authorization", apiKey);
+        www.SetRequestHeader("Authorization", "Bearer " + apiKey);
         www.SetRequestHeader("Content-Type", "application/json");
         www.chunkedTransfer = false;
 
