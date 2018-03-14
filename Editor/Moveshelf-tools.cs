@@ -210,12 +210,13 @@ namespace Moveshelf {
 
         void OnGUI()
         {
-            var width = position.width - 20;
+            var width = position.width - GUI.skin.verticalScrollbar.fixedWidth - 5;
             EditorGUIUtility.labelWidth = LABEL_WIDTH;
+            GUI.skin.label.wordWrap = true;
 
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
 
-            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.BeginHorizontal(GUILayout.MaxWidth(width));
             myApiKey = EditorGUILayout.PasswordField("API KEY", myApiKey);
             if (GUILayout.Button("Set API Key", GUILayout.Width(BUTTON_WIDTH)))
             {
@@ -225,7 +226,7 @@ namespace Moveshelf {
             EditorGUILayout.EndHorizontal();
 
             GUILayout.Label("Quick search", EditorStyles.boldLabel);
-            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.BeginHorizontal(GUILayout.MaxWidth(width));
             myString = EditorGUILayout.TextField("Keywords", myString);
             if (GUILayout.Button("SEARCH", GUILayout.Width(BUTTON_WIDTH)))
             {
@@ -236,7 +237,7 @@ namespace Moveshelf {
             GUILayout.Label("Search results", EditorStyles.boldLabel);
             if (searchResults.mocapClips.edges != null) {
                 foreach (var clip in searchResults.mocapClips.edges) {
-                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.BeginHorizontal(GUILayout.MaxWidth(width));
                     GUILayout.Label(clip.node.title, GUILayout.ExpandWidth(true), GUILayout.MaxWidth(width - 2*BUTTON_WIDTH));
                     if (GUILayout.Button("import", GUILayout.Width(BUTTON_WIDTH)))
                     {
@@ -252,8 +253,8 @@ namespace Moveshelf {
 
             GUILayout.Label("Clip info", EditorStyles.boldLabel);
             if (clipDetails.id != null) {
-                GUILayout.Label("Title: " + clipDetails.title);
-                GUILayout.Label("Description: " + clipDetails.description);
+                GUILayout.Label("Title: " + clipDetails.title, GUILayout.MaxWidth(width));
+                GUILayout.Label("Description: " + clipDetails.description, GUILayout.MaxWidth(width));
                 if (GUILayout.Button("See it on Moveshelf.com", GUILayout.Width(width))) {
                     Application.OpenURL("https://moveshelf.com/edit/"+clipDetails.id);
                 }
@@ -265,14 +266,17 @@ namespace Moveshelf {
                     GUILayout.Label(author + ": " + comment);
                 }
 
-                myComment = EditorGUILayout.TextField("Comment: ", myComment);
+                myComment = EditorGUILayout.TextField("Comment: ", myComment,
+                        GUILayout.MaxWidth(width));
                 if (GUILayout.Button("Send", GUILayout.Width(width))) {
                     createComment(clipDetails.id, myComment);
                 }
 
                 GUILayout.Label("Preview image", EditorStyles.boldLabel);
                 if (this.clipPreviewImage != null) {
-                    GUILayout.Label(this.clipPreviewImage, GUILayout.MaxWidth(width));
+					var aspectRatio = (float)clipPreviewImage.width / clipPreviewImage.height;
+                    GUILayout.Label(this.clipPreviewImage,
+                            GUILayout.Width(width), GUILayout.Height(width / aspectRatio));
                 } else {
                     GUILayout.Label("No preview available");
                 }
