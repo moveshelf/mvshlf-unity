@@ -22,5 +22,5 @@ We encourage you to look into the source code of this plugin to see how motion c
 
 ### FAQ:
 * Moveshelf supports both FBX and BVH motion data formats, however, since Unity only [supports FBX](https://docs.unity3d.com/Manual/3D-formats.html), search results are hereby filtered to only find animations supported from the engine.
-* For security reasons, Movehself API key’s can’t be access from us after creation. Make sure you store them safely immediately after creation.
+* For security reasons, Movehself API key’s can’t be downloaded after creation. Make sure you store them safely at that time.
 * As usual, after motion data is imported in Unity, make sure imported animation type is configured as 'Humanoid' and that Unity Mecanim system is nicely mapping skeleton bones in the correct way. [Read more about Unity mechanim](https://unity3d.com/learn/tutorials/topics/animation/animate-anything-mecanim)
