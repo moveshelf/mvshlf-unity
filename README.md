@@ -1,5 +1,7 @@
 # mvshlf-unity
 
+Moveshelf it's a cloud-based 3D digital motion visualization service and collaboration tool, created to make human motion data more accessible and easier to use. Find out more about [Moveshelf](https://moveshelf.com)
+
 ## Moveshelf API integration for Unity
 
 ### Getting started:
@@ -17,6 +19,7 @@ If you feel like, go ahead and deep dive our source code, fork this repository a
 ### About Moveshelf API:
 Moveshelf API is designed with [GraphQL](http://graphql.org/) to offer greatest flexibility to each API request, ensure faster development cycles and provide developers a more consistent interface with higher maintainability.   
 GraphQL lets you replace multiple REST requests with a single call to fetch the data you specify and only that data. This is a very powerful advantage over the REST API endpoints.   
+   
 We encourage you to look into the source code of this plugin to see how motion clips information is requested using our API. For more advanced API usage, see also interactive comments feed handling. [Learn more about GraphQL](http://graphql.org/learn/)
 
 
