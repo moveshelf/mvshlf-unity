@@ -22,7 +22,36 @@ If you feel like, go ahead and deep dive our source code, fork this repository a
 ### About Moveshelf API:
 Moveshelf API is designed with [GraphQL](http://graphql.org/) to offer greatest flexibility to each API request, ensure faster development cycles and provide developers a more consistent interface with higher maintainability.   
 GraphQL lets you replace multiple REST requests with a single call to fetch the data you specify and only that data. This is a very powerful advantage over the REST API endpoints.   
-   
+See for example a simpla search query with keyword, filetype filter and number of results limited to 1:
+
+```graphql
+query { mocapClips(search: “walk”, filter: {fileType: FBX}, first: 1) {
+            edges {
+               node {
+                  title,   
+                  description
+               }
+            }
+        }
+}
+```
+And its predictable, structured result: 
+
+```graphql
+{ "data": {
+      "mocapClips": {
+          "edges": [
+             {
+                "node": {
+                "title": "Walk cycle”
+                "description": "That one!"
+                }
+             }	
+          ]
+       }
+   }
+}
+```
 We encourage you to look into the source code of this plugin to see how motion clips information is requested using our API. For more advanced API usage, please refer for example to the interactive comments feed handling. [Learn more about GraphQL](http://graphql.org/learn/)
 
 
