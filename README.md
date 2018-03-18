@@ -5,7 +5,7 @@ Moveshelf is a cloud-based 3D digital motion visualization service and collabora
 ## Moveshelf API integration for Unity
 
 ### Goal
-The Moveshelf-Unity integration is open source (MIT license) and its purpose is primarily to show how easy it is to integrate directly with Moveshelf's API. It is not meant as a fully featured produciton ready tool. If you can contribute to this project and make it better, please do! We will be there to help. Then again, if you just want to grab this and build your own propietary tool, that is fine too.
+The Moveshelf-Unity integration is open source (MIT license) and its purpose is primarily to show how easy it is to integrate directly with Moveshelf's API. It is not meant as a fully featured production ready tool. If you can contribute to this project and make it better, please do! We will be there to help. Then again, if you just want to grab this and build your own propietary tool, that is fine too.
 
 ### Getting started:
 * Clone the repository inside the *Assets/* folder of a Unity project;
