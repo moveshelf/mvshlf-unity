@@ -1,5 +1,5 @@
 # The MIT License (MIT)
-Copyright &copy; 2018, Moveshelf Labs B.V.
+Copyright &copy; 2019, Moveshelf Labs B.V.
 
 * * *
 
