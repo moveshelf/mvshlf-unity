@@ -3,7 +3,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEditor;
-using LitJson;
+using LitJson; //external dll
 
 namespace Moveshelf {
     class Utils {
