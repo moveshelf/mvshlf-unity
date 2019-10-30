@@ -1,6 +1,6 @@
 # mvshlf-unity
 
-Moveshelf is a cloud-based 3D digital motion visualization service and collaboration tool, created to make human motion data more accessible and easier to use. Find out more about [Moveshelf](https://moveshelf.com)
+Moveshelf is a cloud-based 3D digital motion visualization service and collaboration tool, created to make human motion data more accessible and easier to use for 3D character animations and more. Find out more about [Moveshelf](https://moveshelf.com/character-animation)
 
 ## Moveshelf API integration for Unity
 
